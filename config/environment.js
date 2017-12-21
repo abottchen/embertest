@@ -5,6 +5,23 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'embertest',
     environment,
+
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
+
+   firebase: {
+      apiKey: "AIzaSyBZ40rChQAwCL19Pe8eNvoct6bkO9VDEmk",
+      authDomain: "embertest-dbd78.firebaseapp.com",
+      databaseURL: "https://embertest-dbd78.firebaseio.com",
+      projectId: "embertest-dbd78",
+      storageBucket: "embertest-dbd78.appspot.com",
+      messagingSenderId: "751670300564"
+    },
+
+
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
